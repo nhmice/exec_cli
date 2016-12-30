@@ -1,0 +1,13 @@
+// $Id$
+// vim:ft=javascript
+
+// If your extension references something external, use ARG_WITH
+// ARG_WITH("exec_cli", "for exec_cli support", "no");
+
+// Otherwise, use ARG_ENABLE
+// ARG_ENABLE("exec_cli", "enable exec_cli support", "no");
+
+if (PHP_EXEC_CLI != "no") {
+	EXTENSION("exec_cli", "exec_cli.c", PHP_EXTNAME_SHARED, "/DZEND_ENABLE_STATIC_TSRMLS_CACHE=1");
+}
+
